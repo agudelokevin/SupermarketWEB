@@ -13,7 +13,7 @@ namespace SupermarketWEB
             builder.Services.AddRazorPages();
 
             builder.Services.AddDbContext<SumpermarketContext>(options=>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("SupermarketDb")
+            options.UseSqlServer(builder.Configuration.GetConnectionString("SupermarketDB")
             ));
 
 
