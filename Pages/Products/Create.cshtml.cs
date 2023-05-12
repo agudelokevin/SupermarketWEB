@@ -5,35 +5,37 @@ using SupermarketWEB.Models;
 
 namespace SupermarketWEB.Pages.Products
 {
-    public class CreateModel : PageModel
-    {
-        private readonly SumpermarketContext _context;
-
-        public CreateModel(SumpermarketContext context)
+    
+        public class CreateModel : PageModel
         {
-            _context = context;
-        }
+        
+            private readonly SumpermarketContext _context;
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
+            public CreateModel(SumpermarketContext context)
+            {
+                _context = context;
+            }
 
-        [BindProperty]
-
-        public Product Product { get; set; } = default!;
-
-        public async Task<IActionResult> OnPostAsync()
-        {
-            if (!ModelState.IsValid || _context.Products == null||  Product == null)
+            public IActionResult OnGet()
             {
                 return Page();
             }
 
-            _context.Products.Add(Product);
-            await _context.SaveChangesAsync();
-            return RedirectToPage("./Index");
-        
+            [BindProperty]
+
+            public Product Product { get; set; } = default!;
+
+            public async Task<IActionResult> OnPostAsync()
+            {
+                if (!ModelState.IsValid || _context.Products == null || Product == null)
+            {
+                    return Page();
+                }
+
+                _context.Products.Add(Product);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            
+            }
         }
-    }
 }
