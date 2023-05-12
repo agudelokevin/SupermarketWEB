@@ -29,7 +29,6 @@ namespace SupermarketWEB.Pages.Products
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
             }
-
             return RedirectToPage("./Index");
         }
     }

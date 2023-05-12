@@ -29,9 +29,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model=>model.Product.Stock)
         </dd>
-       
     </dl>
-
     <form method="post">
         <input type="hidden" asp-for="Product.CategoryId" />
         <input type="submit" value="Delete" class="btn btn-danger" />
