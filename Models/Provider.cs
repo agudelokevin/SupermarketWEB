@@ -10,7 +10,8 @@
         public DateTime Birthday { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-
+        public ICollection<Sale>? Sales { get; set; }
+        public ICollection<Purchase>? Purchases { get; set; }
 
     }
 }
